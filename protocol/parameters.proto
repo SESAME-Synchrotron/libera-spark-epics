@@ -1,0 +1,115 @@
+Terminator = LF;
+
+setADCSize {
+	out "ADC_SIZE %d"; 
+}
+ 
+getADCSize {
+	out "ADC_SIZE?";
+	in  "%d"; 
+}
+
+setKX {
+	out "KX %d"; 
+}
+
+getKX {
+	out "KX?";
+	in  "%d"; 
+}
+
+setKY {
+	out "KY %d"; 
+}
+
+getKY {
+	out "KY?";
+	in  "%d"; 
+}
+
+setKQ {
+	out "KQ %d"; 
+}
+
+getKQ {
+	out "KQ?";
+	in  "%d"; 
+}
+
+setXOFF {
+	out "XOFF %d";
+}
+
+getXOFF {
+	out "XOFF?";
+	in  "%d"; 
+}
+
+setYOFF {
+	out "YOFF %d"; 
+}
+
+getYOFF {
+	out "YOFF?";
+	in  "%d"; 
+}
+
+setQOFF {
+	out "QOFF %d"; 
+}
+
+getQOFF {
+	out "QOFF?";
+	in  "%d"; 
+}
+
+setTrigDelay {
+	out "TRIG_DELAY %d"; 
+}
+
+getTrigDelay {
+	out "TRIG_DELAY?";
+	in  "%d"; 
+}
+
+setTrigTime {
+	out "TRIG_TM?";
+	in  "%d"; 
+}
+
+getFillCount {
+	out "FILL_CNT?";
+	in  "%d"; 
+}
+
+resetFillCount {
+	out "FILL_CNT:RST"; 
+}
+
+setMAFLength {
+	out "MAF_LENGTH %d"; 
+}
+
+getMAFLength {
+	out "MAF_LENGTH?";
+	in  "%d"; 
+}
+
+getVersion {
+	out "VER?";
+	in  "%s"; 
+}
+
+getStatus {
+	out "STT?";
+	in  "%s"; 
+}
+
+trigger {
+	out "TRIG"; 
+}
+
+start {
+	out "START"; 
+}
+

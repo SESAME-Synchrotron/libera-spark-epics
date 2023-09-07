@@ -1,0 +1,238 @@
+record(stringin, "$(PREFIX):getVersion")
+{
+	field(DTYP, "stream")
+	field(INP,  "@parameters.proto getVersion $(PORT)")
+	field(PINI, "YES")
+	field(SCAN, "5 second")
+}
+
+record(stringin, "$(PREFIX):getStatus")
+{
+	field(DTYP, "stream")
+	field(INP,  "@parameters.proto getStatus $(PORT)")
+	field(PINI, "YES")
+	field(SCAN, "1 second")
+}
+
+record(ao, "$(PREFIX):start")
+{
+	field(DESC, "Start the device")
+	field(DTYP, "stream")
+	field(OUT,  "@parameters.proto start $(PORT)")
+	field(PINI, "NO")
+}
+
+record(ao, "$(PREFIX):setADCSize")
+{
+	field(DESC, "Set ADC Size")
+	field(DTYP, "stream")
+	field(OUT,  "@parameters.proto setADCSize $(PORT)")
+	field(PINI, "NO")
+	field(FLNK, "$(PREFIX):getADCSize")
+}
+
+record(ai, "$(PREFIX):getADCSize")
+{
+	field(DTYP, "stream")
+	field(INP,  "@parameters.proto getADCSize $(PORT)")
+	field(PINI, "YES")
+}
+
+record(ao, "$(PREFIX):setKX")
+{
+	field(DESC, "Set KX")
+	field(DTYP, "stream")
+	field(OUT,  "@parameters.proto setKX $(PORT)")
+	field(PINI, "NO") 
+	field(DRVL, "1")
+	field(DRVH, "65535")
+	field(LOPR, "1")
+	field(HOPR, "65535")
+	field(FLNK, "$(PREFIX):getKX")
+}
+
+record(ai, "$(PREFIX):getKX")
+{
+	field(DTYP, "stream")
+	field(INP,  "@parameters.proto getKX $(PORT)")
+	field(PINI, "YES")
+	field(EGU,  "um")
+}
+
+record(ao, "$(PREFIX):setKY")
+{
+	field(DESC, "Set KY")
+	field(DTYP, "stream")
+	field(OUT,  "@parameters.proto setKY $(PORT)")
+	field(PINI, "NO")
+	field(DRVL, "1")
+	field(DRVH, "65535")
+	field(LOPR, "1")
+	field(HOPR, "65535")
+	field(FLNK, "$(PREFIX):getKY")
+}
+
+record(ai, "$(PREFIX):getKY")
+{
+	field(DTYP, "stream")
+	field(INP,  "@parameters.proto getKY $(PORT)")
+	field(PINI, "YES")
+	field(EGU,  "μm")
+}
+
+record(ao, "$(PREFIX):setKQ")
+{
+	field(DESC, "Set KQ")
+	field(DTYP, "stream")
+	field(OUT,  "@parameters.proto setKQ $(PORT)")
+	field(PINI, "NO")
+	field(DRVL, "1")
+	field(DRVH, "65535")
+	field(LOPR, "1")
+	field(HOPR, "65535")
+	field(FLNK, "$(PREFIX):getKQ")
+}
+
+record(ai, "$(PREFIX):getKQ")
+{
+	field(DTYP, "stream")
+	field(INP,  "@parameters.proto getKQ $(PORT)")
+	field(PINI, "YES")
+	field(EGU,  "um")
+}
+
+record(ao, "$(PREFIX):setXOFF")
+{
+	field(DESC, "Set XOFF")
+	field(DTYP, "stream")
+	field(OUT,  "@parameters.proto setXOFF $(PORT)")
+	field(PINI, "NO")
+	field(DRVL, "-32768")
+	field(DRVH, "32767")
+	field(LOPR, "-32768")
+	field(HOPR, "32767")
+	field(FLNK, "$(PREFIX):getXOFF")
+}
+
+record(ai, "$(PREFIX):getXOFF")
+{
+	field(DTYP, "stream")
+	field(INP,  "@parameters.proto getXOFF $(PORT)")
+	field(PINI, "YES")
+	field(EGU,  "um")
+}
+
+record(ao, "$(PREFIX):setYOFF")
+{
+	field(DESC, "Set YOFF")
+	field(DTYP, "stream")
+	field(OUT,  "@parameters.proto setYOFF $(PORT)")
+	field(PINI, "NO")
+	field(DRVL, "-32768")
+	field(DRVH, "32767")
+	field(LOPR, "-32768")
+	field(HOPR, "32767")
+	field(FLNK, "$(PREFIX):getYOFF")
+}
+
+record(ai, "$(PREFIX):getYOFF")
+{
+	field(DTYP, "stream")
+	field(INP,  "@parameters.proto getYOFF $(PORT)")
+	field(PINI, "YES")
+	field(EGU,  "um")
+}
+
+record(ao, "$(PREFIX):setQOFF")
+{
+	field(DESC, "Set QOFF")
+	field(DTYP, "stream")
+	field(OUT,  "@parameters.proto setQOFF $(PORT)")
+	field(PINI, "NO")
+	field(DRVL, "-32768")
+	field(DRVH, "32767")
+	field(LOPR, "-32768")
+	field(HOPR, "32767")
+	field(FLNK, "$(PREFIX):getQOFF")
+}
+
+record(ai, "$(PREFIX):getQOFF")
+{
+	field(DTYP, "stream")
+	field(INP,  "@parameters.proto getQOFF $(PORT)")
+	field(PINI, "YES")
+	field(EGU,  "um")
+}
+
+record(ao, "$(PREFIX):setTrigDelay")
+{
+	field(DESC, "Set Trigger Delay")
+	field(DTYP, "stream")
+	field(OUT,  "@parameters.proto setTrigDelay $(PORT)")
+	field(PINI, "NO")
+	field(DRVL, "0")
+	field(DRVH, "65535")
+	field(LOPR, "0")
+	field(HOPR, "65535")
+	field(FLNK, "$(PREFIX):getTrigDelay")
+}
+
+record(ai, "$(PREFIX):getTrigDelay")
+{
+	field(DTYP, "stream")
+	field(INP,  "@parameters.proto getTrigDelay $(PORT)")
+	field(PINI, "YES")
+}
+
+record(ao, "$(PREFIX):trigger")
+{  
+	field(DESC, "Set Trigger")
+	field(DTYP, "stream")
+	field(OUT,  "@parameters.proto trigger $(PORT)")
+	field(PINI, "NO")
+} 
+
+record(ai, "$(PREFIX):getFillCount")
+{
+	field(DTYP, "stream")
+	field(INP,  "@parameters.proto getFillCount $(PORT)")
+	field(PINI, "YES")
+	field(SCAN, "1 second")
+}
+
+record(ao, "$(PREFIX):resetFillCount")
+{
+	field(DTYP, "stream")
+	field(OUT,  "@parameters.proto resetFillCount $(PORT)")
+	field(PINI, "NO")
+	field(FLNK, "$(PREFIX):getFillCount")
+}
+
+record(ao, "$(PREFIX):setMAFLength")
+{
+	field(DESC, "Set MAF Length")
+	field(DTYP, "stream")
+	field(OUT,  "@parameters.proto setMAFLength $(PORT)")
+	field(PINI, "NO")
+	field(DRVL, "1")
+	field(DRVH, "52")
+	field(LOPR, "1")
+	field(HOPR, "52")
+	field(FLNK, "$(PREFIX):getMAFLength")
+}
+
+record(ai, "$(PREFIX):getMAFLength")
+{
+	field(DTYP, "stream")
+	field(INP,  "@parameters.proto getMAFLength $(PORT)")
+	field(PINI, "YES")
+} 
+
+record(stringin, "$(PREFIX):getStatus")
+{
+	field(DTYP, "stream")
+	field(INP,  "@parameters.proto getStatus $(PORT)")
+	field(PINI, "YES")
+	field(SCAN, "1 second")
+}
+

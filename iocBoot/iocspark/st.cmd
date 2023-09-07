@@ -1,21 +1,17 @@
-#!../../bin/linux-x86_64/spark
+#!bin/linux-x86_64/spark
 
-## You may have to change spark to something else
-## everywhere it appears in this file
+< iocBoot/iocspark/envPaths
 
-< envPaths
+# Define asyn port name, prefix name and host information.
 
-cd "${TOP}"
+epicsEnvSet("STREAM_PROTOCOL_PATH", "protocol")
 
-## Register all support components
 dbLoadDatabase "dbd/spark.dbd"
 spark_registerRecordDeviceDriver pdbbase
 
-## Load record instances
-#dbLoadRecords("db/xxx.db","user=control")
+dbLoadRecords("$(ASYN)/db/asynRecord.db", "PORT=$(PORT),P=$(PREFIX):,R=PORT,ADDR=,IMAX=,OMAX=")
+dbLoadRecords("db/parameters.db", "PORT=$(PORT),PREFIX=$(PREFIX)")
+drvAsynIPPortConfigure("$(PORT)", "$(HOST)", 0, 0, 1)
 
-cd "${TOP}/iocBoot/${IOC}"
 iocInit
 
-## Start any sequence programs
-#seq sncxxx,"user=control"
