@@ -1,0 +1,60 @@
+record(ao, "$(PREFIX):ADC:Size")
+{
+	field(PINI, "YES")
+	field(VAL,  "$(SIZE)")
+	field(SCAN, "1 second")
+}
+
+record(waveform, "$(PREFIX):ADC")
+{
+	field(PINI, "NO")
+	field(SCAN, "1 second")
+	field(DTYP, "stream")
+	field(INP,  "@data.proto read_adc($(PREFIX):ADC:Size) $(PORT)")
+	field(NELM, "$(BUFFER)")
+	field(FTVL, "SHORT")
+}
+
+record(aSub, "$(PREFIX):ADC:SUB")
+{
+	field(PINI, "YES")
+	field(SNAM, "split_4_way")
+	field(INPA, "$(PREFIX):ADC CP") field(FTA,  "SHORT") field(NOA,  "$(BUFFER)")
+	field(OUTA, "$(PREFIX):ADC:A")  field(FTVA, "SHORT") field(NOVA, "$(SIZE)")
+	field(OUTB, "$(PREFIX):ADC:B")  field(FTVB, "SHORT") field(NOVB, "$(SIZE)")
+	field(OUTC, "$(PREFIX):ADC:C")  field(FTVC, "SHORT") field(NOVC, "$(SIZE)")
+	field(OUTD, "$(PREFIX):ADC:D")  field(FTVD, "SHORT") field(NOVD, "$(SIZE)")
+}
+
+record(waveform, "$(PREFIX):ADC:A")
+{
+	field(PINI, "YES")
+	field(SCAN, "1 second")
+	field(NELM, "$(SIZE)")
+	field(FTVL, "SHORT")
+}
+
+record(waveform, "$(PREFIX):ADC:B")
+{
+	field(PINI, "YES")
+	field(SCAN, "1 second")
+	field(NELM, "$(SIZE)")
+	field(FTVL, "SHORT")
+}
+
+record(waveform, "$(PREFIX):ADC:C")
+{
+	field(PINI, "YES")
+	field(SCAN, "1 second")
+	field(NELM, "$(SIZE)")
+	field(FTVL, "SHORT")
+}
+
+record(waveform, "$(PREFIX):ADC:D")
+{
+	field(PINI, "YES")
+	field(SCAN, "1 second")
+	field(NELM, "$(SIZE)")
+	field(FTVL, "SHORT")
+}
+

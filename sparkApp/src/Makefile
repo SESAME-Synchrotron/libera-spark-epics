@@ -18,6 +18,7 @@ spark_DBD += sCalcoutRecord.dbd
 spark_DBD += stream.dbd
 spark_DBD += asyn.dbd
 spark_DBD += drvAsynIPPort.dbd
+spark_DBD += data.dbd
 
 # Add all the support libraries needed by this IOC
 spark_LIBS += calc
@@ -26,6 +27,7 @@ spark_LIBS += asyn
 
 # spark_registerRecordDeviceDriver.cpp derives from spark.dbd
 spark_SRCS += spark_registerRecordDeviceDriver.cpp
+spark_SRCS += data.c
 
 # Build the main IOC entry point on workstation OSs.
 spark_SRCS_DEFAULT += sparkMain.cpp
