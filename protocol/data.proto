@@ -4,10 +4,10 @@ ReplyTimeout = 1000;
 ReadTimeout  = 100;
 InTerminator = LF;
 
-read_adc {
+read_data {
 	Separator     = "";
 	InTerminator  = "";
-	out "ADC %(\$1.VAL)d";
+	out "\$1 %(\$2.VAL)d";
 	in  "%d\n";
 }
 

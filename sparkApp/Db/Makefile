@@ -12,6 +12,7 @@ include $(TOP)/configure/CONFIG
 # databases, templates, substitutions like this
 DB += parameters.db
 DB += adc.db
+DB += tbt_iq.db
 
 #----------------------------------------------------
 # If <anyname>.db template is not named <anyname>*.template add

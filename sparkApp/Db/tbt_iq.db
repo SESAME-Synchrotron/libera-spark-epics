@@ -1,0 +1,96 @@
+record(ao, "$(PREFIX):TBT_IQ:Size")
+{
+	field(PINI, "YES")
+	field(VAL,  "$(SIZE)")
+	field(SCAN, "1 second")
+}
+
+record(waveform, "$(PREFIX):TBT_IQ")
+{
+	field(PINI, "NO")
+	field(SCAN, "1 second")
+	field(DTYP, "stream")
+	field(INP,  "@data.proto read_data(TBT_IQ,$(PREFIX):TBT_IQ:Size) $(PORT)")
+	field(NELM, "$(BUFFER)")
+	field(FTVL, "SHORT")
+}
+
+record(aSub, "$(PREFIX):TBT_IQ:SUB")
+{
+	field(PINI, "YES")
+	field(SNAM, "split_8_way")
+	field(INPA, "$(PREFIX):TBT_IQ CP") field(FTA,  "SHORT") field(NOA,  "$(BUFFER)")
+	field(OUTA, "$(PREFIX):TBT_IQ:IA") field(FTVA, "SHORT") field(NOVA, "$(SIZE)")
+	field(OUTB, "$(PREFIX):TBT_IQ:QA") field(FTVB, "SHORT") field(NOVB, "$(SIZE)")
+	field(OUTC, "$(PREFIX):TBT_IQ:IB") field(FTVC, "SHORT") field(NOVC, "$(SIZE)")
+	field(OUTD, "$(PREFIX):TBT_IQ:QB") field(FTVD, "SHORT") field(NOVD, "$(SIZE)")
+	field(OUTE, "$(PREFIX):TBT_IQ:IC") field(FTVE, "SHORT") field(NOVE, "$(SIZE)")
+	field(OUTF, "$(PREFIX):TBT_IQ:QC") field(FTVF, "SHORT") field(NOVF, "$(SIZE)")
+	field(OUTG, "$(PREFIX):TBT_IQ:ID") field(FTVG, "SHORT") field(NOVG, "$(SIZE)")
+	field(OUTH, "$(PREFIX):TBT_IQ:QD") field(FTVH, "SHORT") field(NOVH, "$(SIZE)")
+}
+
+record(waveform, "$(PREFIX):TBT_IQ:IA")
+{
+	field(PINI, "YES")
+	field(SCAN, "1 second")
+	field(NELM, "$(SIZE)")
+	field(FTVL, "SHORT")
+}
+
+record(waveform, "$(PREFIX):TBT_IQ:QA")
+{
+	field(PINI, "YES")
+	field(SCAN, "1 second")
+	field(NELM, "$(SIZE)")
+	field(FTVL, "SHORT")
+}
+
+record(waveform, "$(PREFIX):TBT_IQ:IB")
+{
+	field(PINI, "YES")
+	field(SCAN, "1 second")
+	field(NELM, "$(SIZE)")
+	field(FTVL, "SHORT")
+}
+
+record(waveform, "$(PREFIX):TBT_IQ:QB")
+{
+	field(PINI, "YES")
+	field(SCAN, "1 second")
+	field(NELM, "$(SIZE)")
+	field(FTVL, "SHORT")
+}
+
+record(waveform, "$(PREFIX):TBT_IQ:IC")
+{
+	field(PINI, "YES")
+	field(SCAN, "1 second")
+	field(NELM, "$(SIZE)")
+	field(FTVL, "SHORT")
+}
+
+record(waveform, "$(PREFIX):TBT_IQ:QC")
+{
+	field(PINI, "YES")
+	field(SCAN, "1 second")
+	field(NELM, "$(SIZE)")
+	field(FTVL, "SHORT")
+}
+
+record(waveform, "$(PREFIX):TBT_IQ:ID")
+{
+	field(PINI, "YES")
+	field(SCAN, "1 second")
+	field(NELM, "$(SIZE)")
+	field(FTVL, "SHORT")
+}
+
+record(waveform, "$(PREFIX):TBT_IQ:QD")
+{
+	field(PINI, "YES")
+	field(SCAN, "1 second")
+	field(NELM, "$(SIZE)")
+	field(FTVL, "SHORT")
+}
+

@@ -10,7 +10,7 @@ record(waveform, "$(PREFIX):ADC")
 	field(PINI, "NO")
 	field(SCAN, "1 second")
 	field(DTYP, "stream")
-	field(INP,  "@data.proto read_adc($(PREFIX):ADC:Size) $(PORT)")
+	field(INP,  "@data.proto read_data(ADC,$(PREFIX):ADC:Size) $(PORT)")
 	field(NELM, "$(BUFFER)")
 	field(FTVL, "SHORT")
 }
