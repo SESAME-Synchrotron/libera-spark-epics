@@ -3,12 +3,15 @@ record(ao, "$(PREFIX):TBT_IQ:Size")
 	field(PINI, "YES")
 	field(VAL,  "$(SIZE)")
 	field(SCAN, "1 second")
+	field(DRVL, "1")
+	field(DRVH, "$(MAX_SIZE)")
 }
 
 record(waveform, "$(PREFIX):TBT_IQ")
 {
-	field(PINI, "NO")
+	field(PINI, "YES")
 	field(SCAN, "1 second")
+	field(DISA, "1")
 	field(DTYP, "stream")
 	field(INP,  "@data.proto read_data(TBT_IQ,$(PREFIX):TBT_IQ:Size) $(PORT)")
 	field(NELM, "$(BUFFER)")
@@ -20,21 +23,21 @@ record(aSub, "$(PREFIX):TBT_IQ:SUB")
 	field(PINI, "YES")
 	field(SNAM, "split_8_way")
 	field(INPA, "$(PREFIX):TBT_IQ CP") field(FTA,  "SHORT") field(NOA,  "$(BUFFER)")
-	field(OUTA, "$(PREFIX):TBT_IQ:IA") field(FTVA, "SHORT") field(NOVA, "$(SIZE)")
-	field(OUTB, "$(PREFIX):TBT_IQ:QA") field(FTVB, "SHORT") field(NOVB, "$(SIZE)")
-	field(OUTC, "$(PREFIX):TBT_IQ:IB") field(FTVC, "SHORT") field(NOVC, "$(SIZE)")
-	field(OUTD, "$(PREFIX):TBT_IQ:QB") field(FTVD, "SHORT") field(NOVD, "$(SIZE)")
-	field(OUTE, "$(PREFIX):TBT_IQ:IC") field(FTVE, "SHORT") field(NOVE, "$(SIZE)")
-	field(OUTF, "$(PREFIX):TBT_IQ:QC") field(FTVF, "SHORT") field(NOVF, "$(SIZE)")
-	field(OUTG, "$(PREFIX):TBT_IQ:ID") field(FTVG, "SHORT") field(NOVG, "$(SIZE)")
-	field(OUTH, "$(PREFIX):TBT_IQ:QD") field(FTVH, "SHORT") field(NOVH, "$(SIZE)")
+	field(OUTA, "$(PREFIX):TBT_IQ:IA") field(FTVA, "SHORT") field(NOVA, "$(MAX_SIZE)")
+	field(OUTB, "$(PREFIX):TBT_IQ:QA") field(FTVB, "SHORT") field(NOVB, "$(MAX_SIZE)")
+	field(OUTC, "$(PREFIX):TBT_IQ:IB") field(FTVC, "SHORT") field(NOVC, "$(MAX_SIZE)")
+	field(OUTD, "$(PREFIX):TBT_IQ:QB") field(FTVD, "SHORT") field(NOVD, "$(MAX_SIZE)")
+	field(OUTE, "$(PREFIX):TBT_IQ:IC") field(FTVE, "SHORT") field(NOVE, "$(MAX_SIZE)")
+	field(OUTF, "$(PREFIX):TBT_IQ:QC") field(FTVF, "SHORT") field(NOVF, "$(MAX_SIZE)")
+	field(OUTG, "$(PREFIX):TBT_IQ:ID") field(FTVG, "SHORT") field(NOVG, "$(MAX_SIZE)")
+	field(OUTH, "$(PREFIX):TBT_IQ:QD") field(FTVH, "SHORT") field(NOVH, "$(MAX_SIZE)")
 }
 
 record(waveform, "$(PREFIX):TBT_IQ:IA")
 {
 	field(PINI, "YES")
 	field(SCAN, "1 second")
-	field(NELM, "$(SIZE)")
+	field(NELM, "$(MAX_SIZE)")
 	field(FTVL, "SHORT")
 }
 
@@ -42,7 +45,7 @@ record(waveform, "$(PREFIX):TBT_IQ:QA")
 {
 	field(PINI, "YES")
 	field(SCAN, "1 second")
-	field(NELM, "$(SIZE)")
+	field(NELM, "$(MAX_SIZE)")
 	field(FTVL, "SHORT")
 }
 
@@ -50,7 +53,7 @@ record(waveform, "$(PREFIX):TBT_IQ:IB")
 {
 	field(PINI, "YES")
 	field(SCAN, "1 second")
-	field(NELM, "$(SIZE)")
+	field(NELM, "$(MAX_SIZE)")
 	field(FTVL, "SHORT")
 }
 
@@ -58,7 +61,7 @@ record(waveform, "$(PREFIX):TBT_IQ:QB")
 {
 	field(PINI, "YES")
 	field(SCAN, "1 second")
-	field(NELM, "$(SIZE)")
+	field(NELM, "$(MAX_SIZE)")
 	field(FTVL, "SHORT")
 }
 
@@ -66,7 +69,7 @@ record(waveform, "$(PREFIX):TBT_IQ:IC")
 {
 	field(PINI, "YES")
 	field(SCAN, "1 second")
-	field(NELM, "$(SIZE)")
+	field(NELM, "$(MAX_SIZE)")
 	field(FTVL, "SHORT")
 }
 
@@ -74,7 +77,7 @@ record(waveform, "$(PREFIX):TBT_IQ:QC")
 {
 	field(PINI, "YES")
 	field(SCAN, "1 second")
-	field(NELM, "$(SIZE)")
+	field(NELM, "$(MAX_SIZE)")
 	field(FTVL, "SHORT")
 }
 
@@ -82,7 +85,7 @@ record(waveform, "$(PREFIX):TBT_IQ:ID")
 {
 	field(PINI, "YES")
 	field(SCAN, "1 second")
-	field(NELM, "$(SIZE)")
+	field(NELM, "$(MAX_SIZE)")
 	field(FTVL, "SHORT")
 }
 
@@ -90,7 +93,7 @@ record(waveform, "$(PREFIX):TBT_IQ:QD")
 {
 	field(PINI, "YES")
 	field(SCAN, "1 second")
-	field(NELM, "$(SIZE)")
+	field(NELM, "$(MAX_SIZE)")
 	field(FTVL, "SHORT")
 }
 

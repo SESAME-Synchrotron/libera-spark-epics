@@ -61,6 +61,7 @@ COPY --from=builder /usr/lib64/libselinux.so.1     /usr/lib64/
 COPY --from=builder /usr/lib64/libpcre2-8.so.0     /usr/lib64/
 COPY --from=builder /usr/lib64/libnss_dns.so.2     /usr/lib64/
 
+ENV EPICS_CA_MAX_ARRAY_BYTES 10000000
 # CMD ["./bin/linux-x86_64/ioc", "iocBoot/ioc/st.cmd"]
 CMD ["./run.cmd"]
 
