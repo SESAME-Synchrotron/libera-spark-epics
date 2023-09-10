@@ -29,3 +29,10 @@ iocBoot_DEPEND_DIRS += $(filter %App,$(DIRS))
 # Add any additional dependency rules here:
 
 include $(TOP)/configure/RULES_TOP
+
+docker:
+	docker build -t registry.docker.com/libera-spark .
+
+push: docker
+	docker push registry.docker.com/libera-spark
+
