@@ -1,0 +1,45 @@
+record(ao, "$(PREFIX):TBT_QSUM:Size")
+{
+	field(PINI, "YES")
+	field(VAL,  "$(SIZE)")
+	field(SCAN, "1 second")
+	field(DRVL, "1")
+	field(DRVH, "$(MAX_SIZE)")
+}
+
+record(waveform, "$(PREFIX):TBT_QSUM")
+{
+	field(PINI, "YES")
+	field(SCAN, "1 second")
+	field(DISA, "1")
+	field(DTYP, "stream")
+	field(INP,  "@data.proto read_data(TBT_QSUM,$(PREFIX):TBT_QSUM:Size) $(PORT)")
+	field(NELM, "$(BUFFER)")
+	field(FTVL, "SHORT")
+}
+
+record(aSub, "$(PREFIX):TBT_QSUM:SUB")
+{
+	field(PINI, "YES")
+	field(SNAM, "split_2_way")
+	field(INPA, "$(PREFIX):TBT_QSUM CP")  field(FTA,  "SHORT") field(NOA,  "$(BUFFER)")
+	field(OUTA, "$(PREFIX):TBT_QSUM:Q")   field(FTVA, "SHORT") field(NOVA, "$(MAX_SIZE)")
+	field(OUTB, "$(PREFIX):TBT_QSUM:SUM") field(FTVB, "SHORT") field(NOVB, "$(MAX_SIZE)")
+}
+
+record(waveform, "$(PREFIX):TBT_QSUM:Q")
+{
+	field(PINI, "YES")
+	field(SCAN, "1 second")
+	field(NELM, "$(MAX_SIZE)")
+	field(FTVL, "SHORT")
+}
+
+record(waveform, "$(PREFIX):TBT_QSUM:SUM")
+{
+	field(PINI, "YES")
+	field(SCAN, "1 second")
+	field(NELM, "$(MAX_SIZE)")
+	field(FTVL, "SHORT")
+}
+
