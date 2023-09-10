@@ -20,6 +20,12 @@ DB += tbt-qsum.db
 DB += tbt-qsum-decimated.db
 DB += tbt-xy.db
 DB += tbt-xy-decimated.db
+DB += tdp-amplitudes.db
+DB += tdp-amplitudes-decimated.db
+DB += tdp-qsum.db
+DB += tdp-qsum-decimated.db
+DB += tdp-xy.db
+DB += tdp-xy-decimated.db
 
 #----------------------------------------------------
 # If <anyname>.db template is not named <anyname>*.template add
