@@ -1,0 +1,14 @@
+iocName: libera-spark
+
+nodeSelector:
+  labelKey: machine
+  labelValue: diagnostics
+
+image:
+  name: libera-spark
+  repository: registry.docker.com
+  tag: "latest"
+  pullPolicy: Always
+
+autoRestart: true
+
